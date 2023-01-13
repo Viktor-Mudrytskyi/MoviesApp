@@ -12,6 +12,8 @@ class NewMoviesApi {
       return Movie.fromJson(jsonDecode(response.body));
     }else{
       2+9;
+      ///weflernfgoerngnerguo
+      ///egfmrelnglerkng
       throw Exception('Fetch failed');
     }
     
