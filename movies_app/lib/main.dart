@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/pages/home_page/home_page.dart';
 
-
-//pain
 void main() {
   runApp(MaterialApp(
     initialRoute: '/',
@@ -38,3 +36,7 @@ void main() {
     ),
   ));
 }
+
+
+
+//This is new commit
