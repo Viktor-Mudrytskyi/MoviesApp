@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-
 import 'custom_chip.dart';
 
 class Chips extends StatefulWidget {
@@ -22,10 +19,10 @@ class _ChipsState extends State<Chips> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: const [
-          CustomChip(text: 'Movie',),
-          CustomChip(text: 'Movie',),
-          CustomChip(text: 'Not Watched',),
-          CustomChip(text: 'Watched',),
+          CustomChip(text: 'Movie'),
+          CustomChip(text: 'Movie'),
+          CustomChip(text: 'Not Watched'),
+          CustomChip(text: 'Watched'),
         ],
       ),
     );

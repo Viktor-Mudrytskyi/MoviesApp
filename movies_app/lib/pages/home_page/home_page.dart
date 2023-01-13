@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/bloc/home_page_bloc/home_page_bloc.dart';
@@ -25,28 +24,29 @@ class HomePage extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverList(
-              delegate: SliverChildListDelegate([
-                const Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Chips(),
-                ),
-                
-                BlocBuilder<HomePageBloc, HomePageStates>(
-                  builder: ((context, state) {
-
-                    if (state is HomePageLoadingState) {
-                      log('event added');
-                      context.read<HomePageBloc>().add(HomePageLoadEvent());
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    } else {
-                      return NewMoviesList(
-                          movies: (state as HomePageLoadedState).movieList);
-                    }
-                  }),
-                ),
-              ]),
+              delegate: SliverChildListDelegate(
+                [
+                  const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Chips(),
+                  ),
+                  BlocBuilder<HomePageBloc, HomePageStates>(
+                    builder: ((context, state) {
+                      if (state is HomePageLoadingState) {
+                        log('event added');
+                        context.read<HomePageBloc>().add(HomePageLoadEvent());
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      } else {
+                        return NewMoviesList(
+                            movies: (state as HomePageLoadedState).movieList);
+                      }
+                    }),
+                  ),
+                  
+                ],
+              ),
             ),
           ],
         ),
